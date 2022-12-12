@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--
+        Arinah Karim
+        INFO-I 360 FA22
+        Portfolio Final
+    -->
+    <title>Experiences</title>
+    <!-- resets browser defaults -->
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <!-- custom styles -->
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Font awesome -->
+    <script src="https://kit.fontawesome.com/bf37eaf948.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-------------------------- NAVIGATION ------------------------>
+    <div id="mySidenav" class="snav">
+        <!-- &times; = multiplication sign (kinda looks like an "x") -->
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="index.html">HOME</a>
+        <a href="projects.html">PROJECTS</a>
+        <a href="exp.html">EXPERIENCES</a>
+        <!-- https://www.freecodecamp.org/news/how-to-use-html-to-open-link-in-new-tab/ -->
+        <a href="docs/Karim, Arinah resume.pdf" target="_blank" rel="noopener noreferrer">RESUME</a>
+        <a href="exp.html#contact" onclick="closeNav()">CONTACT</a>
+    </div>
+
+    <span class="menu-container">
+        <!-- made it 3x so the menu text fits under it right -->
+        <i class="fas fa-bars fa-3x" onclick="openNav()"></i>
+    </span>
+    <!----------------------- END OF NAVIGATION -------------------->
+
+
+    <div id="opacity-change">
+        <!-- button that takes user to top of page -->
+        <!-- https://www.w3schools.com/howto/howto_js_scroll_to_top.asp -->
+        <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+        <header>
+            <h1>Experiences<br>
+                <div class="typewriter-container">
+                    <div class="typewriter">Professional Jobs & Technical Skills</div>
+                </div>
+                <br>
+                <div>
+                    <a href="exp.html#exp"><button class="hvr-pop" role="button">Explore!</button></a>
+                </div>
+            </h1>
+            <!-- image by me -->
+            <a href="index.html"><img src="images/logo.png" class="logo" alt="ANK logo"></a>
+        </header>
+
+        <article class="gr-purp" id="exp">
+            <div class="container">
+                <h2>Professional Experiences</h2>
+                <h3 class="h3-text">The Robot-House Human-Robot Interaction Lab</h3>
+                <div id="rhouse" class="work-flex">
+                     <!-- image sauce: https://r-house.luddy.indiana.edu/ -->
+                     <img src="images/rhouse.png" class="work-img" alt="Robot-House Lab Logo">
+                    <div class="text-skill">
+                        <p>I have been a member of the R-House Lab since June of 2020. My role in the lab
+                            varied depending on what projects I found interesting. I intially designed
+                            interactions for social robots to have with humans. I then participated in
+                            the HRI Student Design competition in 2021 and won the Best Student Design Competition
+                            CREATIVITY Award with our prototype robot movie companion <a
+                                href="docs/papers/Crunchy-Your-Movie-Companion.pdf" class="hvr-sweep-to-top"
+                                target="_blank" rel="noopener noreferrer">Crunchy</a>.
+                            <br>
+                            Currently, I am annotating
+                            video data with a colleague for training data for our Visual & Physiological project:
+                            Measuring
+                            Engagement with Children. For more information about this project, feel free to check out my
+                            <a href="https://www.linkedin.com/in/arinah-karim/" class="hvr-sweep-to-top" target="_blank"
+                                rel="noopener noreferrer">LinkedIn's about section</a>. I am also working with
+                            colleagues in a collaboration with
+                            Toyota Research Institute to analyze Japanese older adults and their sense of ikigai
+                            (purpose of living) and how a social robot
+                            named <a href="https://luxai.com/" class="hvr-sweep-to-top" target="_blank"
+                                rel="noopener noreferrer">QT</a> can increase the adults' senses of ikigai.
+                            <br>
+                            For more information about the lab, feel free to check out the <a
+                                href="https://r-house.luddy.indiana.edu/" class="hvr-sweep-to-top" target="_blank"
+                                rel="noopener noreferrer">
+                                the lab's page
+                            </a>!
+                        </p>
+                        <div class="work-skill">
+                            <p>Python</p>
+                            <p>Git</p>
+                            <p>Ubuntu</p>
+                            <p>Data Analysis</p>
+                            <p>Collaboration</p>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <h3 class="h3-text">Relativity</h3>
+                <div class="work-flex">
+                    <!-- img sauce: https://www.crunchbase.com/organization/kcura -->
+                    <img src="images/relativity.png" class="work-img" alt="Relativity Logo">
+                    <div class="text-skill">
+                        <p>From the May-August 2022, I worked as a
+                            Software Engineer Intern at <a href="https://www.relativity.com/" class="hvr-sweep-to-top"
+                                target="_blank" rel="noopener noreferrer">Relativity</a>.
+                            I had the pleasure of working with Team Tardis in the Processing Vertical. For most of the
+                            summer,
+                            I worked individually, but near the end of the summer I worked collaboratively
+                            with the other intern on the team. I had fullstack roles initially before working
+                            more with backend. While collaborating with the other intern on the team, we created a
+                            NuGet package that would assist in retrieving data from New Relic Dashboard. We created Unit
+                            Tests for this package, as well as for any individual task we had.
+                            <br>
+                            I learned how to debug and also learned the SCRUM process through Kanban. I created various
+                            pull requests through BitBucket and frequently used the Networks tab in Chrome for Testing
+                            API endpoints. Additionally, I became more efficient in communicating questions or progress
+                            to my
+                            team, and became faster at assessing issues because of knowing which resources to go through
+                            first.
+                        </p>
+                        <div class="work-skill">
+                            <p>Full-Stack</p>
+                            <p>C#</p>
+                            <p>Agile</p>
+                            <p>Visual Studio</p>
+                            <p>Unit Testing</p>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <h3 class="h3-text">The Center of Excellence for Women and Technology (CEW&T)</h3>
+                <div class="work-flex">
+                    <!-- image sauce: https://www.facebook.com/iucewit/ -->
+                    <img src="images/cewit.png" class="work-img" alt="CEW&T Logo">
+                    <div class="text-skill">
+                        <p> CEW&T provides a safe Community
+                            for women and their allies to learn about technology in a variety of ways. I interned there
+                            from August 2021-May 2022 with the <a
+                                href="https://womenandtech.indiana.edu/programs/student-alliance-groups/ethical-ai.html"
+                                class="hvr-sweep-to-top" target="_blank" rel="noopener noreferrer">Ethical AI team</a>
+                            . This was a brand new team at the time,
+                            so I and my two other colleagues created the foundation for the team. We worked in a fast
+                            paced environment
+                            with weekly deadlines to ensure that fun and informative events would happen once a month.
+                            <br>
+                            My role on the team would rotate with each event. I worked with Adobe Spark and XD for
+                            designing flyers. I also
+                            designed presentations and researched content. Because we were a new team, we also gathered
+                            resources on AI, such as different existing
+                            programming libraries, as well as movies, books, or starter projects, to provide everyone
+                            who came to our events.
+                        </p>
+                        <div class="work-skill">
+                            <p>Leadership</p>
+                            <p>Adobe Spark</p>
+                            <p>Adobe XD</p>
+                            <p>Microsoft Teams</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </article>
+
+        <article class="yellow">
+            <div class="container">
+                <h2>Technical Skills</h2>
+                <!-- TODO: center icons -->
+                <div class="skills">
+                    <div class="skillsicon">
+                        <i class="fa-brands fa-java fa-5x"></i>
+                        <p>Java</p>
+                    </div>
+                    <div class="skillsicon">
+                        <i class="fa-brands fa-python fa-5x"></i>
+                        <p>Python</p>
+                    </div>
+                    <div class="skillsicon">
+                        <i class="fa-brands fa-html5 fa-5x"></i>
+                        <p>HTML</p>
+                    </div>
+                    <div class="skillsicon">
+                        <i class="fa-brands fa-css3 fa-5x"></i>
+                        <p>CSS</p>
+                    </div>
+                    <div class="skillsicon">
+                        <i class="fa-solid fa-code-compare fa-5x"></i>
+                        <p>Git</p>
+                    </div>
+                    <div class="skillsicon">
+                        <i class="fa-solid fa-database fa-5x"></i>
+                        <p>PostgreSQL</p>
+                    </div>
+                    <div class="skillsicon">
+                        <i class="fa-solid fa-r fa-5x"></i>
+                        <p>R</p>
+                    </div>
+                    <div class="skillsicon">
+                        <i class="fa-solid fa-c fa-5x"></i>
+                        <p>C</p>
+                    </div>
+                    <div class="skillsicon">
+                        <i class="fa-brands fa-linux fa-5x"></i>
+                        <p>Linux</p>
+                    </div>
+                    <div class="skillsicon">
+                        <i class="fa-brands fa-windows fa-5x"></i>
+                        <p>Windows OS</p>
+                    </div>
+                </div>
+            </div>
+
+        </article>
+
+
+        <footer id="contact">
+            <div class="footer-flex">
+                <div class="socials">
+                    <a href="https://github.com/Mangosmoove" class="icon" target="_blank" rel="noopener noreferrer"><i
+                            class="fa-brands fa-github fa-xl fa-inverse"></i></a>
+                    <a href="https://www.linkedin.com/in/arinah-karim/" class="icon" target="_blank"
+                        rel="noopener noreferrer"><i class="fa-brands fa-linkedin fa-xl fa-inverse"></i></a>
+                </div>
+                <div class="con">
+                    <p>email: ankarim01@gmail.com</p> 
+                    <p>phone: (219) 232-5001</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
+    <!------------------------------ JAVASCRIPT -------------------------------->
+    <script src="js/nav.js"></script>
+    <script src="js/top.js"></script>
+</body>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--
+        Arinah Karim
+        INFO-I 360 FA22
+        Portfolio Final
+    -->
+    <title>Home</title>
+    <!-- resets browser defaults -->
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <!-- custom styles -->
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome - For use in I360 -->
+    <script src="https://kit.fontawesome.com/bf37eaf948.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <!-------------------------- NAVIGATION ------------------------>
+    <div id="mySidenav" class="snav">
+        <!-- &times; = multiplication sign (kinda looks like an "x") -->
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="index.html">HOME</a>
+        <a href="projects.html">PROJECTS</a>
+        <a href="exp.html">EXPERIENCES</a>
+        <!-- https://www.freecodecamp.org/news/how-to-use-html-to-open-link-in-new-tab/ -->
+        <a href="docs/Karim, Arinah resume.pdf" target="_blank" rel="noopener noreferrer">RESUME</a>
+        <a href="index.html#contact" onclick="closeNav()">CONTACT</a>
+    </div>
+
+    <span class="menu-container">
+        <!-- made it 3x so the menu text fits under it right -->
+        <i class="fas fa-bars fa-3x" onclick="openNav()"></i>
+    </span>
+    <!----------------------- END OF NAVIGATION -------------------->
+
+    <!-- button that takes user to top of page -->
+    <!-- https://www.w3schools.com/howto/howto_js_scroll_to_top.asp -->
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+    <!-- MAIN CONTENT -->
+    <div id="opacity-change">
+        <header>
+            <h1>Hello, World!<br>
+                <div class="typewriter-container">
+                    <div class="typewriter">Greetings from a mango</div>
+                </div>
+                <br>
+                <div>
+                    <a href="index.html#About"><button class="hvr-pop" role="button">Start!</button></a>
+                </div>
+            </h1>
+            <!-- image by me -->
+            <a href="index.html"><img src="images/logo.png" class="logo" alt="ANK logo"></a>
+            <!-- FOR BUTTON: -->
+            <!-- https://www.youtube.com/watch?v=zPcvAwp71uA -->
+        </header>
+
+        <article class="yellow" id="About">
+            <div class="container">
+                <h2>ABOUT ME</h2>
+                <div class="about-flex">
+                    <!-- TODO: add phonetic pronunciation of name -->
+                    <!-- Optional stuff: make a pop up containing defintiion of social robots -->
+                    <div>
+                        <p>My name is Arinah Karim (pronounced like 'arena'), and I am from Dyer, Indiana. I am a
+                            currently
+                            a
+                            senior at Indiana University Bloomington and will graduate in May 2023. I am majoring in
+                            Computer
+                            Science,
+                            with a specialization in Artificial Intelligence, as well as taking minors in Human-Centered
+                            Computing
+                            and Cognitive Science. I also currently work part-time at <a href="exp.html#rhouse"
+                                class="hvr-sweep-to-top"> the
+                                Robot-House
+                                Lab</a>
+                            where I study Human-Robot Interaction with a prototype social robot named Haru from Honda
+                            Research Institute. I am passionate about social
+                            robots, as well as software development, data science, and artificial intelligence.
+                            <br>
+                            In my free time, I enjoy reading Webtoons, playing Pokemon games, reading books (especially
+                            from
+                            the
+                            sci
+                            fi genre)
+                            and watching Korean dramas.
+                            <!-- TODO: add more as necessary -->
+                        </p>
+                    </div>
+
+                    <img class="img-me" src="images/me.jpg" alt="me">
+                </div>
+
+            </div>
+        </article>
+
+        <article class="red">
+            <div class="container">
+                <h2>Relevant Coursework</h2>
+                <h3>Past/Current Enrollments</h3>
+                <div class="course-flex">
+                    <ul>
+                        <li>CSCI-C 200: Introduction to Computers and Programming</li>
+                        <li>INFO-I 101: Introduction to Informatics</li>
+                        <li>MATH-M 212: Calculus II</li>
+                        <li>CSCI-C 241: Discrete Structures for Computer Science</li>
+                        <li>CSCI-C 212: Introduction to Software Systems</li>
+                        <li>CSCI-C 343: Data Structures</li>
+                        <li>STAT-S 350: Introduction to Statistical Inference</li>
+                        <li>CSCI-B 351: Introduction to Artificial Intelligence</li>
+                        <li>CSCI-C 291: System Programming With C & Unix</li>
+                        <li>INFO-I 300: HCI/Interaction Design</li>
+                        <li>CSCI-B 403: Introduction to Algorithm Design & Analysis</li>
+                        <li>COGS-Q 360: Autonomous Robotics</li>
+                        <li>INFO-I 341: Prototyping with Arduino Tools</li>
+                        <li>CSCI-B 365: Data Analysis & Mining</li>
+                        <li>CSCI-B 457: Introduction to Computer Vision</li>
+                        <li>COGS-Q 350: Math & Logic for Cognitive Science</li>
+                        <li>CSCI-B 461: Database Concepts</li>
+                        <li>INFO-I 360: Web Design</li>
+                    </ul>
+                    <div class="git-icon">
+                        <a href="https://github.com/Mangosmoove" class="icon" target="_blank"
+                            rel="noopener noreferrer"><i class="fa-brands fa-github-alt fa-10x"></i></a>
+                        <p class="git-text">Check out my coursework for previous classes!</p>
+                    </div>
+                </div>
+
+                <hr>
+                <h3>Future Enrollments</h3>
+                <ul>
+                    <li>COGS-X 497: Research in Cognitive & Information Science</li>
+                    <li>CSCI-C 335: Computer Structures</li>
+                    <li>INFO-I 413: Usable Artificial Intelligence</li>
+                    <li>LING-L 445: The Computer & Natural Language</li>
+                </ul>
+
+            </div>
+        </article>
+
+
+        <footer id="contact">
+            <div class="footer-flex">
+                <div class="socials">
+                    <a href="https://github.com/Mangosmoove" class="icon" target="_blank" rel="noopener noreferrer"><i
+                            class="fa-brands fa-github fa-xl fa-inverse"></i></a>
+                    <a href="https://www.linkedin.com/in/arinah-karim/" class="icon" target="_blank"
+                        rel="noopener noreferrer"><i class="fa-brands fa-linkedin fa-xl fa-inverse"></i></a>
+                </div>
+                <div class="con">
+                    <p>email: ankarim01@gmail.com</p> 
+                    <p>phone: (219) 232-5001</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
+    <!------------------------------ JAVASCRIPT -------------------------------->
+    <script src="js/nav.js"></script>
+    <script>
+        // When the user clicks on <div>, open the popup
+        function myFunction() {
+            var popup = document.getElementById("myPopup");
+            popup.classList.toggle("show");
+        }
+    </script>
+
+    <script src="js/top.js"></script>
+</body>
+
+</html>

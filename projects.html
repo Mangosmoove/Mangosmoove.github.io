@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--
+        Arinah Karim
+        INFO-I 360 FA22
+        Portfolio Final
+    -->
+    <title>Projects</title>
+    <!-- resets browser defaults -->
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <!-- custom styles -->
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <!-- https://joaopereirawd.github.io/animatedModal.js/ modal -->
+    <link rel="stylesheet" href="plugins/modal/animate.min.css">
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Font awesome -->
+    <script src="https://kit.fontawesome.com/bf37eaf948.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-------------------------- NAVIGATION ------------------------>
+    <div id="mySidenav" class="snav">
+        <!-- &times; = multiplication sign (kinda looks like an "x") -->
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="index.html">HOME</a>
+        <a href="projects.html">PROJECTS</a>
+        <a href="exp.html">EXPERIENCES</a>
+        <!-- https://www.freecodecamp.org/news/how-to-use-html-to-open-link-in-new-tab/ -->
+        <a href="docs/Karim, Arinah resume.pdf" target="_blank" rel="noopener noreferrer">RESUME</a>
+        <a href="projects.html#contact" onclick="closeNav()">CONTACT</a>
+    </div>
+
+    <span class="menu-container">
+        <!-- made it 3x so the menu text fits under it right -->
+        <i class="fas fa-bars fa-3x" onclick="openNav()"></i>
+    </span>
+    <!----------------------- END OF NAVIGATION -------------------->
+
+
+    <div id="opacity-change">
+        <!-- button that takes user to top of page -->
+        <!-- https://www.w3schools.com/howto/howto_js_scroll_to_top.asp -->
+        <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+        <header>
+            <h1>Projects<br>
+                <div class="typewriter-container">
+                    <div class="typewriter">I've done interesting things in college.</div>
+                </div>
+                <br>
+                <div>
+                    <a href="projects.html#pro"><button class="hvr-pop" role="button">Explore!</button></a>
+                </div>
+            </h1>
+            <!-- image by me -->
+            <a href="index.html"><img src="images/logo.png" class="logo" alt="ANK logo"></a>
+        </header>
+
+        <article class="red" id="pro">
+            <div class="container">
+                <h3>Spaceship Titanic</h3>
+                <div class="proj-flex">
+                    <!-- image sauce:  https://www.kaggle.com/competitions/spaceship-titanic-->
+                    <img src="images/titanic.jpg" class="work-img" alt="outer space">
+                    <div class="proj-text">
+                        <p>This was a final project for my Data Mining & Analysis class that used <a
+                                href="https://www.kaggle.com/competitions/spaceship-titanic" class="hvr-sweep-to-top"
+                                target="_blank" rel="noopener noreferrer">Kaggle's</a>
+                            Spaceship
+                            Titanic challenge prompt. This challenge required a person to determine, given a
+                            dataset, if
+                            a
+                            person
+                            was transported to another dimension. I utilized R and RStudio to implement Logistic
+                            Regression and
+                            Random Forest models to determine if my cleaned dataset would perform better than the
+                            raw
+                            dataset.
+                            For more details, click <a id="titanId" href="#titanModal"
+                                class="hvr-sweep-to-top">here</a>!</p>
+                        <p>You can also check out my <a href="docs/titanic.pdf" class="hvr-sweep-to-top" target="_blank"
+                                rel="noopener noreferrer">written report</a> that discusses how
+                            I cleaned data and showcases visualized information.</p>
+                    </div>
+                    <div id="titanModal">
+                        <!--THIS IS IMPORTANT! to close the modal, the class name has to match the name given on the ID -->
+                        <div id="btn-close-modal" class="close-titanModal">
+                            &times;
+                        </div>
+                        <div class="modal-content">
+                            <div class="container">
+                                <!--Your modal content goes here-->
+                                <article>
+                                    <h2>Spaceship Titanic</h2>
+                                    <h3>Project Description</h3>
+                                    <p>The Spaceship Titanic collided with some sort of space anomally and the
+                                        task
+                                        is to try to determine which passengers have been transported to another
+                                        dimension given training data. The training data is composed of various
+                                        features for 8693 people. These features are: the person's ID, their
+                                        home
+                                        planet, whether or not hte person had entered cryosleep, the cabin
+                                        number
+                                        the person was staying in during their voyage, the planet destination,
+                                        their
+                                        age, whether or not they paid for VIP, various fees for the ship's
+                                        ammenties, and whether or not they had been transported to another
+                                        dimension.</p>
+                                </article>
+                                <article>
+                                    <h3>Methods for Comparison</h3>
+                                    <p>Logistic Regression and Random Forest using R and its libraries.</p>
+                                </article>
+                                <article>
+                                    <h3>Conclusions</h3>
+                                    <p>Logistic regression performed with a 75.03% accuracy. I used the raw
+                                        training
+                                        data,
+                                        as well as the cleaned data that I made, for Random Forest. My cleaned
+                                        data
+                                        had a
+                                        75.39% accuracy while the raw data had a 79.88% accuracy.
+                                    </p>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr class="black">
+                <h3>Optical Music Recognition</h3>
+                <div class="proj-flex">
+                    <!-- image sauce: my homework lol -->
+                    <img src="images/omr.png" class="work-img" alt="musical notes labeled">
+                    <div>
+                        <p>This was an assignment for my Introduction to Computer Vision class. I worked collaboratively
+                            with
+                            two other students to see this assignment fulfilled. We utilized Python to implement
+                            Computer Vision techniques to
+                            accurately label music notes in a music sheet. To view a breakdown of our approach, click <a
+                                id="omrId" href="#omrModal" class="hvr-sweep-to-top">here</a>!</p>
+                    </div>
+                    <div id="omrModal">
+                        <!--THIS IS IMPORTANT! to close the modal, the class name has to match the name given on the ID -->
+                        <div id="btn-close-modal" class="close-omrModal">
+                            &times;
+                        </div>
+                        <div class="modal-content">
+                            <div class="container">
+                                <!--Your modal content goes here-->
+                                
+                                <article>
+                                    <h2>Optical Music Recognition</h2>
+                                    <h3>Project Description</h3>
+                                    <p>Given a music sheet, identify the pitch of a note using line detection and
+                                        note recognition
+                                        and produce a labeled music sheet.
+                                    </p>
+                                </article>
+                                <article>
+                                    <h3>Design Decisions and Assumptions</h3>
+                                    <p>No note can be labeled as sharp or flat. All notes are assumed to be labeled
+                                        as natural.
+                                        All the staves will have a slope of 0 and be perfectly straight lines.
+                                        Therefore when assigning names to notes, we use the y-axis to serve as a
+                                        measure of distance as the determinant.
+                                        The templates will be the same exact size as the notes it encounters in the
+                                        music sheet. Therefore we did not resize the template or the music sheet.
+                                    </p>
+                                </article>
+                                <article>
+                                    <h3>Coding Classes and Functions</h3>
+                                    <article class="omr-method">
+                                        <h4>Convolution</h4>
+                                        <p>We created a convolution function called <span
+                                                class="italic">general_conv</span>. This function takes in
+                                            three parameters: the image, the filter that it should be convolved
+                                            with,
+                                            and whether or not that filter is a template. The function, after
+                                            determining whether we are doing convolution or cross-correlation flips
+                                            the
+                                            filter horizontally and vertically to make the filter a convolutional
+                                            kernel. Then, two for loops are used to traverse through the image space
+                                            and
+                                            calculate the dot product of the kernel and image. The results are then
+                                            sent
+                                            to a function. The results are then stored in an image variable that
+                                            is returned. Initially, we did not include the third parameter but we
+                                            implemented it for our template matching algorithm.
+                                        </p>
+                                    </article>
+                                    <article class="omr-method">
+                                        <h4>Separable Convolution</h4>
+                                        <p>For this, we created a function called <span class="italic">sep_conv</span>.
+                                            It takes in three
+                                            parameters: the image, an <span class="italic">H_x filter</span>, and an
+                                            <span class="italic">H_y filter</span>. We make a call to
+                                            <span class="italic">general_conv</span> and send in the image with one
+                                            filter at a time and store the
+                                            results in a variable that is returned.
+                                        </p>
+                                    </article>
+                                    <article class="omr-method">
+                                        <h4>Template Matching</h4>
+                                        <p>We created a function <span class="italic">detect_template</span> which
+                                            takes
+                                            in two parameters: the
+                                            image and the template. The template will contain the type of note that
+                                            can
+                                            be encountered in image (which is a music sheet). A cross-correlation is
+                                            performed on the image with the template and the results being stored in
+                                            score_image. Then we have a for loop that traverses over the image space
+                                            and
+                                            checks if, at a position in the image space, if there is a match with
+                                            the
+                                            template and image. We experimented with threshold values and used 0.7
+                                            as it
+                                            helped detect more true positives. There was an issue of values
+                                            exceeding
+                                            the 255 limit, so normalization had to be implmeneted.</p>
+                                    </article>
+                                    <article class="omr-method">
+                                        <h4>Edge Map Scoring</h4>
+                                        <p>For this problem, we created a function <span
+                                                class="italic">sobel_edge_detector</span> which takes in an
+                                            image and two filters. We performed the separable convolution on the
+                                            image
+                                            with the two filters and then computed the gradient magnitude and
+                                            normalized
+                                            it after to ensure that the gradient magnitude did not exceed 255.
+                                            The function to calculate the edge match scores, we created a function
+                                            called <span class="italic">score_func</span> that was inside of another
+                                            function called <span class="italic">sobel_matching</span>.
+                                            This algorithm utilizes the <span class="italic">sobel_edge_detection</span>
+                                            function made earlier and
+                                            calculates a score for the similarities. In our current implementation,
+                                            it
+                                            would take quite some time to compute the scoring matrix, but utilizing
+                                            dynamic programming would definitely speed up the process.</p>
+                                    </article>
+                                    <article class="omr-method">
+                                        <h4>Hough Space</h4>
+                                        <p>The function we used
+                                            for it is <span class="italic">hough_space</span>. With this function,
+                                            we
+                                            are able to determine the
+                                            staff heights which helps with pitch detection. It also determines the
+                                            locations of the staves. This function required a lot of tuning on the
+                                            extrema detector. Generally, the more staves/more complexity the music
+                                            has,
+                                            the higher the neighborhood. It would probably make sense to establish
+                                            the
+                                            neighborhood as a function of the size of the image, but we did not do
+                                            that.</p>
+                                    </article>
+                                    <article class="omr-method">
+                                        <h4>Pitch Detection</h4>
+                                        <p>The function we created for this is called <span
+                                                class="italic">get_pitch</span>.
+                                            To determine what note
+                                            is on the staff, we determine what clef the notes on the staves are in.
+                                            Then, based on the distance the note is away from the nearest staff, the
+                                            note can be labeled by using the index of where the note is relative to
+                                            the
+                                            staves.</p>
+                                    </article>
+                                </article>
+                                <article>
+                                    <h3>Conclusions</h3>
+                                    <p>The algorithm can identify the clefs correctly and can correctly name the
+                                        notes for each respective cleff. It can also place the box around the
+                                        notes. For improvements, we could have implemented a resizing
+                                        method that would ensure that the template would be the appropriate size
+                                        to convolve with. Our Edge Mapping function was quite slow, but if we
+                                        used a dynamic programming approach, its time complexity would have
+                                        significantly decreased.</p>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr class="black">
+                <h3>Snake Game</h3>
+                <div class="proj-flex">
+                    <!-- image sauce:  https://www.kaggle.com/competitions/spaceship-titanic-->
+                    <img src="images/snek.png" class="snek-img" alt="snake game">
+                    <div>
+                        <p>This was a final project for my Introduction to Artificial Intelligence class. I worked
+                            collaboratively
+                            with a group of four. We used Python and various libraries to create a Snake that would
+                            learn to play
+                            the game using BFS as a comparison to the Qlearning reinforcement algorithm.
+                            For more details, click <a id="snekId" href="#snekModal" class="hvr-sweep-to-top">here</a>!
+                        </p>
+                        <p>For details about the algorithm and design, empirical analysis, or external resources, please
+                            refer to
+                            this <a href="docs/snake.pdf" class="hvr-sweep-to-top" target="_blank"
+                                rel="noopener noreferrer">report</a>.
+                        </p>
+                    </div>
+                    <div id="snekModal">
+                        <!--THIS IS IMPORTANT! to close the modal, the class name has to match the name given on the ID -->
+                        <div id="btn-close-modal" class="close-snekModal">
+                            &times;
+                        </div>
+                        <div class="modal-content">
+                            <div class="container">
+                                <!--Your modal content goes here-->
+                                
+                                <article>
+                                    <h2>Snake Game</h2>
+                                    <h3>Project Description</h3>
+                                    <p>For our project, we decided to create the Snake game that will teach itself
+                                        to
+                                        pass through as many game levels as possible with reinforcement learning.
+                                        The
+                                        rules of the Snake game are to get the head of the “snake” to overlap the
+                                        targeted
+                                        square. The “snake” begins as a single square and gets one square longer for
+                                        each targeted unit (the 'food') it overlaps, and the game ends when the
+                                        snake
+                                        hits a wall or into any part of itself. Once the targeted square is 'eaten',
+                                        a new
+                                        food unit will be randomly placed on the board while the snake stays in the
+                                        same position, and the game will continue this process until it meets the
+                                        ending
+                                        game requirements. The main challenge is making sure the snake does not run
+                                        into itself or the wall since more space will be occupied by the snake as it
+                                        eats
+                                        more food units which will leave less room for it to maneuver around the
+                                        game
+                                        board. The way that the AI chooses to move directly influences the future
+                                        state
+                                        of the game; for example, the board (represented by pixels/blocks), becomes
+                                        occupied by the body of the snake over time. The path that the snake will
+                                        have to take will be different depending on its size and the snake will have
+                                        to
+                                        recognize itself continuously. Additionally, since the food is generally
+                                        randomly
+                                        generated across the board, paths will have to be different depending on the
+                                        randomization of the reward as well. Pixels do not support diagonal paths
+                                        and
+                                        rely on finding linear routes through corner turns so finding the corners to
+                                        turn
+                                        that minimize the risk of impact is important. We recreated the single
+                                        player
+                                        version of the game where the machine learns to play by utilizing Python and
+                                        some of its libraries such as PyGame, numpy, random, pickle, queue and used
+                                        a board of 200 x 250 pixels.</p>
+                                </article>
+                                <article>
+                                    <h3>Solution as a Human Model</h3>
+                                    <p>Our solution imitates the way a human would think through negative and posi-
+                                        tive reinforcement. The AI is rewarded with points based on their actions.
+                                        If the
+                                        system hits the target it gains 10 points while it will lose 1 point for
+                                        landing on
+                                        empty space and lose 5 points for ending the game. The goal is for the game
+                                        to
+                                        get as many points as possible or the smallest negative number possible.
+                                        Similar
+                                        to a person, the AI tries to win by receiving a reward for what others deem
+                                        as
+                                        good actions, which in a human would initiate a positive response. Both the
+                                        AI and a person are motivated by the reward so they would attempt to repeat
+                                        the actions that earned them the points. Losing points would cause a similar
+                                        reaction as well. Both the AI and a human will try to prevent losing points
+                                        since
+                                        they are punished for wrong actions. In doing so, both the computer and
+                                        person
+                                        would want to avoid the actions that would reduce their points or subtract
+                                        from
+                                        what they previously earned.</p>
+                                </article>
+                                <article>
+                                    <h3>Conclusions & Improvements</h3>
+                                    <p>All in all, the AI does adapt to its environment fairly quickly and does
+                                        eventually
+                                        learn how to get the food. However, trying to surpass 5 or 6 points would
+                                        get
+                                        more and more difficult almost exponentially as time goes on- the reason
+                                        being
+                                        that the snake's body would continue to grow and the way the algorithm
+                                        adapts
+                                        would be slow to avoid self collision, especially when near completion. In
+                                        order
+                                        to help alleviate the burden a higher level would cause, giving reward to
+                                        having
+                                        a larger amount of non-enclosed space would be a good way to ensure better
+                                        future results. Non-enclosed space refers to the space that the snake does
+                                        not
+                                        cover with its body- by minimizing the space (by going in looping or closely
+                                        knit
+                                        patterns), the AI will be more efficient in solving the problems and
+                                        eliminate
+                                        some common defeats in the late stage game. All in all, we learned that
+                                        while
+                                        writing the initial game and learning algorithm was not difficult, getting
+                                        the
+                                        algorithm to give the snake the optimal chance of winning was difficult to
+                                        fine-
+                                        tune, and required forethought to the design of the game and the way that
+                                        the
+                                        AI would eventually learn to handle the board.
+                                    </p>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+        <footer id="contact">
+            <div class="footer-flex">
+                <div class="socials">
+                    <a href="https://github.com/Mangosmoove" class="icon" target="_blank" rel="noopener noreferrer"><i
+                            class="fa-brands fa-github fa-xl fa-inverse"></i></a>
+                    <a href="https://www.linkedin.com/in/arinah-karim/" class="icon" target="_blank"
+                        rel="noopener noreferrer"><i class="fa-brands fa-linkedin fa-xl fa-inverse"></i></a>
+                </div>
+                <div class="con">
+                    <p>email: ankarim01@gmail.com</p> 
+                    <p>phone: (219) 232-5001</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
+    <!------------------------------ JAVASCRIPT -------------------------------->
+    <script src="js/nav.js"></script>
+    <script src="js/top.js"></script>
+
+    <script>
+        const modal = document.querySelector(".modal");
+        const trigger = document.querySelector(".trigger");
+        const closeButton = document.querySelector(".close-button");
+
+        function toggleModal() {
+            modal.classList.toggle("show-modal");
+        }
+
+        function windowOnClick(event) {
+            if (event.target === modal) {
+                toggleModal();
+            }
+        }
+
+        trigger.addEventListener("click", toggleModal);
+        closeButton.addEventListener("click", toggleModal);
+        window.addEventListener("click", windowOnClick); 
+    </script>
+
+    <script src="plugins/modal/jquery.min.js"></script>
+    <script src="plugins/modal/animatedModal.js"></script>
+    <script>
+
+
+        $("#titanId").animatedModal();
+        $("#omrId").animatedModal();
+        $("#snekId").animatedModal();
+    </script>
+
+</body>

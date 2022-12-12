@@ -1,0 +1,946 @@
+/* natural box model */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/* UTILITIES */
+
+/* hides an element on screen, but not from screen readers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* no break */
+.nobr {
+  white-space: nowrap;
+}
+
+/* START STYLES HERE */
+body {
+  margin: 0;
+  background-color: #fff;
+}
+
+/*** COLOR SCHEME ***/
+:root {
+  --dark-purple: #7A77B9;
+  --light-purple: #BD9DEA;
+  --gray-purple: #EBE8E7;
+  --red: #EA7186;
+  --sunflower: #F2C76E;
+  --black-pastel: #333333;
+
+}
+
+/************************************** HEADER, BODY, FOOTER FORMATTING **************************************/
+header h1 {
+  /* should stretch up to 800px wide and center on the screen */
+  max-width: 800px;
+  /* https://stackoverflow.com/questions/7327449/make-a-header-full-screen-width-css */
+  height: 100vh;
+  margin: 0 auto;
+  padding-top: 2.0em;
+}
+
+header {
+  background-color: var(--light-purple);
+  color: var(--gray-purple);
+  /* padding-top: 180px; */
+  text-align: center;
+}
+
+/* https://www.w3schools.com/howto/howto_css_round_buttons.asp */
+button {
+  background-color: var(--dark-purple);
+  border: none;
+  color: var(--gray-purple);
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 30px;
+  margin: 4px 2px;
+  border-radius: 15px;
+}
+
+.logo {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 100px;
+  height: 80px;
+  opacity: 0.75;
+}
+
+article {
+  /* add padding */
+  padding: 0.25em 2.0em 2.0em;
+}
+
+/* Add additional page styles here */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  height: auto;
+  padding-top: 1.0em;
+}
+
+.yellow {
+  background-color: var(--sunflower);
+  color: var(--black-pastel);
+}
+
+.red {
+  background-color: var(--red);
+}
+
+.gr-purp {
+  background-color: var(--gray-purple);
+  color: var(--black-pastel);
+}
+
+footer {
+  padding: 3.0em;
+  padding-top: 5.0em;
+  background-color: var(--dark-purple);
+  color: var(--gray-purple);
+}
+
+.con {
+  margin-top: 10px;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+}
+
+.con p {
+  margin-bottom: 0;
+  line-height: 0.5em;
+  padding-bottom: 0;
+}
+
+
+.footer-flex {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+/* TODO: improve alignment of icons and text */
+
+/* for spacing in between icons */
+.socials a {
+  margin: 2px;
+}
+
+/*************************** END OF HEADER, BODY, FOOTER FORMATTING SECTION *******************************/
+
+/****************************************************** LINKS ************************************************/
+a:link,
+a:visited {
+  /* black text, no text decoration, 2px yellow border on bottom */
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* https://ianlunn.github.io/Hover/ */
+/* Sweep To Top */
+.hvr-sweep-to-top {
+  display: inline-block;
+  vertical-align: middle;
+  border-bottom: 2px solid var(--dark-purple);
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+
+.hvr-sweep-to-top:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--dark-purple);
+  -webkit-transform: scaleY(0);
+  transform: scaleY(0);
+  -webkit-transform-origin: 50% 100%;
+  transform-origin: 50% 100%;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+
+.hvr-sweep-to-top:hover,
+.hvr-sweep-to-top:focus,
+.hvr-sweep-to-top:active {
+  color: var(--gray-purple);
+}
+
+.hvr-sweep-to-top:hover:before,
+.hvr-sweep-to-top:focus:before,
+.hvr-sweep-to-top:active:before {
+  -webkit-transform: scaleY(1);
+  transform: scaleY(1);
+}
+
+/**************************************** END OF LINKS ***************************************************/
+
+
+
+/************************************************* TYPOGRAPHY *********************************************/
+h1 {
+  font-family: 'Kalam', cursive;
+  /* TO DO: change font size */
+  /* TO DO: line-height changes if necessary */
+  font-size: 60px;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li,
+a,
+#myBtn,
+button {
+  font-family: 'Cabin', sans-serif;
+}
+
+/* TO DO: style each text element as needed */
+p {
+  /* TODO: change line-height, font size */
+  font-size: 18px;
+  line-height: 1.25em;
+}
+
+h2 {
+  /* TODO: change font size */
+  font-size: 28px;
+}
+
+h3 {
+  font-size: 22px;
+  margin-bottom: 0;
+}
+
+h4 {
+  font-size: 20px;
+  margin-bottom: 0;
+}
+
+br {
+  display: block;
+  margin: 6px 0;
+}
+
+
+/****************************************** END OF TYPOGRAPHY SECTION ******************************************/
+
+
+/*********************************************** ABOUT PAGE **************************************************/
+.img-me {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  order: -1;
+}
+
+/* make image and text sit next to each other */
+.about-flex {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.course-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column nowrap;
+}
+
+hr {
+  border-top: 1px solid var(--light-purple);
+  padding: 40px auto;
+}
+
+.git-icon {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  order: -1;
+}
+
+.git-icon a {
+  margin-bottom: 0;
+}
+
+.git-text {
+  font-size: 15px;
+  margin-top: 0;
+  font-style: italic;
+}
+
+/******************************************** END OF ABOUT PAGE ********************************************/
+
+
+
+
+
+
+
+/******************************************** PROJECTS PAGE ***********************************************/
+/* TODO: remove underline from modal link */
+
+/* modal */
+#btn-close-modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin: 0 auto;
+  margin-top: 10px;
+  padding-bottom: 5px;
+  font-size: 40px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--red);
+  color: var(--black-pastel);
+}
+
+.black {
+  border-top: 1px solid var(--black-pastel);
+  margin: 20px auto;
+}
+
+.proj-flex {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.work-img {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  padding-top: 1.25em;
+}
+
+.snek-img {
+  width: 200px;
+  height: 250px;
+  margin: 0 auto;
+  padding-top: 1.25em;
+  display: flex;
+}
+
+.omr-method {
+  padding-bottom: 10px;
+}
+
+.omr-method h4 {
+  margin-top: 0.5em;
+}
+
+.italic {
+  font-style: italic;
+}
+
+
+/****************************************** END OF PROJECTS PAGE ******************************************/
+
+
+
+
+
+/******************************************** EXP PAGE ***********************************************/
+.h3-text {
+  color: var(--dark-purple);
+}
+
+/* image + text + skills */
+.work-flex {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+/* text + skills */
+.text-skill {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
+}
+
+/* skill labels */
+.work-skill p {
+  border: 2px solid var(--dark-purple);
+  margin-right: 10px;
+  padding: 5px;
+}
+
+.work-skill {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+/* second section */
+.skills {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.skills div {
+  border: 2px solid var(--gray-purple);
+  padding: 20px 20px 5px;
+  margin: 10px;
+}
+
+
+.skillsicon {
+  text-align: center;
+}
+
+/* TODO: center align text in skills section */
+
+/****************************************** END OF EXP PAGE ******************************************/
+
+
+
+
+/**************************************** NAVIGATION ****************************************************/
+.menu-container {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: var(--dark-purple);
+}
+
+.menu-container:hover {
+  color: var(--dark-purple);
+  cursor: pointer;
+}
+
+.snav {
+  height: 100%;
+  width: 0;
+  overflow-x: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding-top: 60px;
+  z-index: 10000;
+  background-color: var(--dark-purple);
+  transition: 0.5s;
+}
+
+.snav a {
+  font-size: 22px;
+  display: block;
+  padding: 5px 10px 20px 40px;
+  text-decoration: none;
+  color: var(--gray-purple);
+  transition: 0.5s;
+}
+
+.snav a:hover {
+  color: var(--sunflower);
+}
+
+/* x button */
+.snav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 44px;
+}
+
+/**************************************** END OF NAVIGATION ********************************************************/
+
+
+/****************************************** ANIMATIONS ***********************************************/
+/********** icon animation: icon pop, hover.css ***********/
+@-webkit-keyframes hvr-icon-pop {
+  50% {
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+  }
+}
+
+@keyframes hvr-icon-pop {
+  50% {
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+  }
+}
+
+.hvr-icon-pop {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+
+.hvr-icon-pop .hvr-icon {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+
+.hvr-icon-pop:hover .hvr-icon,
+.hvr-icon-pop:focus .hvr-icon,
+.hvr-icon-pop:active .hvr-icon {
+  -webkit-animation-name: hvr-icon-pop;
+  animation-name: hvr-icon-pop;
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+}
+
+/********** typewriter effect *********/
+/* https://css-tricks.com/snippets/css/typewriter-effect/ */
+/* https://www.sitepoint.com/css-typewriter-effect/ */
+/* combined the above two to get the animation */
+
+.typewriter-container {
+  display: inline-block;
+}
+
+.typewriter {
+  overflow: hidden;
+  border-right: .15em solid var(--red);
+  white-space: nowrap;
+  font-size: 19px;
+  font-family: 'Cabin', sans-serif;
+  margin: 0 auto;
+  letter-spacing: .15em;
+  width: 0;
+  animation:
+    typing 2.0s steps(20, end) forwards,
+    blink .8s infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0
+  }
+
+  to {
+    width: 100%
+  }
+}
+
+@keyframes blink {
+
+  from,
+  to {
+    border-color: transparent
+  }
+
+  50% {
+    border-color: var(--red);
+  }
+}
+
+/* button Pop */
+@-webkit-keyframes hvr-pop {
+  50% {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+}
+
+@keyframes hvr-pop {
+  50% {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+}
+
+.hvr-pop {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+
+.hvr-pop:hover,
+.hvr-pop:focus,
+.hvr-pop:active {
+  -webkit-animation-name: hvr-pop;
+  animation-name: hvr-pop;
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+}
+
+
+#myBtn {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: var(--black-pastel);
+  color: var(--gray-purple);
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 18px;
+}
+
+
+
+/* MEDIA QUERIES FROM LARGEST TO SMALLEST */
+/* Extra small devices (portrait phones, less than 576px) */
+@media (min-width: 575.98px) {
+
+  /* typography */
+  button {
+    font-size: 30px;
+  }
+
+  h1 {
+    font-size: 60px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  h3 {
+    font-size: 26px;
+  }
+
+  h4 {
+    font-size: 24px;
+  }
+
+  p,
+  a {
+    font-size: 19px
+  }
+
+  .typewriter {
+    font-size: 24px;
+  }
+
+
+  /* HOME PAGE */
+  .img-me {
+    width: 175px;
+    height: 175px;
+  }
+
+  ul {
+    margin-right: auto;
+  }
+
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media (min-width: 767.98px) {
+
+  /* typography */
+  button {
+    font-size: 30px;
+  }
+
+  h1 {
+    font-size: 65px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  h3 {
+    font-size: 26px;
+  }
+
+  h4 {
+    font-size: 23px;
+  }
+
+  p,
+  a {
+    font-size: 19px
+  }
+
+  .typewriter {
+    font-size: 26px;
+  }
+
+  /* HOMEPAGE */
+  .about-flex {
+    flex-flow: row nowrap;
+  }
+
+  .img-me {
+    width: 175px;
+    height: 175px;
+    margin-left: 20px;
+    margin-right: 10px;
+    order: 1;
+  }
+
+  .git-icon {
+    order: 1;
+  }
+
+  .course-flex {
+    flex-flow: row nowrap;
+    justify-content: space-between;
+  }
+
+  /* EXPERIENCES PAGE */
+  .work-flex {
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .text-skill {
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .work-img {
+    order: 1;
+    margin-left: 30px;
+  }
+
+  .skills {
+    justify-content: space-between;
+  }
+
+  /* PROJECTS PAGE */
+  .proj-flex {
+    flex-flow: row nowrap;
+  }
+
+  .snek-img {
+    order: 1;
+  }
+}
+
+/* Medium devices (tablets, less than 992px) */
+@media (min-width: 991.98px) {
+
+  /* typography */
+  button {
+    font-size: 35px;
+  }
+
+  h1 {
+    font-size: 70px;
+  }
+
+  h2 {
+    font-size: 34px;
+  }
+
+  h3 {
+    font-size: 28px;
+  }
+
+  h4 {
+    font-size: 23px;
+  }
+
+  p,
+  a {
+    font-size: 19px
+  }
+
+  .typewriter {
+    font-size: 28px;
+  }
+
+  /* HOMEPAGE */
+  .about-flex {
+    flex-flow: row nowrap;
+  }
+
+  .img-me {
+    width: 250px;
+    height: 250px;
+    margin-left: 30px;
+    order: 1;
+  }
+
+  .git-icon {
+    order: 1;
+  }
+
+  .course-flex {
+    flex-flow: row nowrap;
+    justify-content: space-between;
+  }
+
+  /* EXPERIENCES PAGE */
+  .work-flex {
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .text-skill {
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .work-img {
+    order: 1;
+    margin-left: 30px;
+  }
+
+  .skills {
+    justify-content: space-between;
+  }
+
+  /* PROJECTS PAGE */
+  .proj-flex {
+    flex-flow: row nowrap;
+  }
+
+  .snek-img {
+    order: 1;
+  }
+}
+
+/* Large devices (desktops, less than 1200px) */
+@media (min-width: 1199.98px) {
+
+  /* typography */
+  button {
+    font-size: 40px;
+  }
+
+  h1 {
+    font-size: 80px;
+  }
+
+  h2 {
+    font-size: 36px;
+  }
+
+  h3 {
+    font-size: 28px;
+  }
+
+  h4 {
+    font-size: 25px;
+  }
+
+  p,
+  a {
+    font-size: 20px;
+  }
+
+  .typewriter {
+    font-size: 30px;
+  }
+
+  /* HOMEPAGE */
+  .about-flex {
+    flex-flow: row nowrap;
+  }
+
+  .img-me {
+    width: 250px;
+    height: 250px;
+    margin-left: 30px;
+    order: 1;
+  }
+
+  .git-icon {
+    order: 1;
+  }
+
+  .course-flex {
+    flex-flow: row nowrap;
+    justify-content: space-between;
+  }
+
+  /* EXPERIENCES PAGE */
+  .work-flex {
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .text-skill {
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .work-img {
+    order: 1;
+    margin-left: 30px;
+  }
+
+  .skills {
+    justify-content: space-between;
+  }
+
+  /* PROJECTS PAGE */
+  .proj-flex {
+    flex-flow: row nowrap;
+  }
+
+  .snek-img {
+    order: 1;
+  }
+}
