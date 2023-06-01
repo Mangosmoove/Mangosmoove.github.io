@@ -862,7 +862,6 @@ hr {
 
 /* Large devices (desktops, less than 1200px) */
 @media (min-width: 1199.98px) {
-
   /* typography */
   button {
     font-size: 40px;

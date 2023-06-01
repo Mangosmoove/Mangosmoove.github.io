@@ -70,69 +70,131 @@
 
         <article class="red" id="pro">
             <div class="container">
-                <h3>Spaceship Titanic</h3>
+                <h3>Who's that Pokemon Trainer? It's ______!</h3>
                 <div class="proj-flex">
                     <!-- image sauce:  https://www.kaggle.com/competitions/spaceship-titanic-->
-                    <img src="images/titanic.jpg" class="work-img" alt="outer space">
+                    <img src="images/pokemon.jpg" class="work-img" alt="Steven Stone Pokemon Battle">
                     <div class="proj-text">
-                        <p>This was a final project for my Data Mining & Analysis class that used <a
-                                href="https://www.kaggle.com/competitions/spaceship-titanic" class="hvr-sweep-to-top"
+                        <p>This was a <strong>Machine Learning</strong> semester project for my Usable Artificial Intelligence class that used <a
+                                href="https://www.kaggle.com/datasets/rounakbanik/pokemon" class="hvr-sweep-to-top"
                                 target="_blank" rel="noopener noreferrer">Kaggle's</a>
-                            Spaceship
-                            Titanic challenge prompt. This challenge required a person to determine, given a
-                            dataset, if
-                            a
-                            person
-                            was transported to another dimension. I utilized R and RStudio to implement Logistic
-                            Regression and
-                            Random Forest models to determine if my cleaned dataset would perform better than the
-                            raw
-                            dataset.
-                            For more details, click <a id="titanId" href="#titanModal"
+                            Pokemon csv which contained various information on Pokemon. The goal of this project was to
+                            determine a non-playable character (NPC) trainer's class from the various found in the
+                            Pokemon games. I worked with two other people and we worked collaboratively on manually
+                            collecting
+                            nearly 4000 trainer classes and their pokemon teams. My role on the team was coding the
+                            project where I performed data cleaning and analysis using primarily Python and Pandas. In
+                            the end, our model had a 46% accuracy, but this was expected as we did not have many samples
+                            for some classes, or too many for others.
+
+                            For more details, click <a id="pokeId" href="#pokeModal"
                                 class="hvr-sweep-to-top">here</a>!</p>
-                        <p>You can also check out my <a href="docs/titanic.pdf" class="hvr-sweep-to-top" target="_blank"
+                        <p>You can also check out my <a href="docs/uai.pdf" class="hvr-sweep-to-top" target="_blank"
                                 rel="noopener noreferrer">written report</a> that discusses how
                             I cleaned data and showcases visualized information.</p>
                     </div>
-                    <div id="titanModal">
+                    <div id="pokeModal">
                         <!--THIS IS IMPORTANT! to close the modal, the class name has to match the name given on the ID -->
-                        <div id="btn-close-modal" class="close-titanModal">
+                        <div id="btn-close-modal" class="close-pokeModal">
                             &times;
                         </div>
                         <div class="modal-content">
                             <div class="container">
                                 <!--Your modal content goes here-->
                                 <article>
-                                    <h2>Spaceship Titanic</h2>
+                                    <h2>Pokemon NPC Trainer Classifier</h2>
                                     <h3>Project Description</h3>
-                                    <p>The Spaceship Titanic collided with some sort of space anomally and the
-                                        task
-                                        is to try to determine which passengers have been transported to another
-                                        dimension given training data. The training data is composed of various
-                                        features for 8693 people. These features are: the person's ID, their
-                                        home
-                                        planet, whether or not hte person had entered cryosleep, the cabin
-                                        number
-                                        the person was staying in during their voyage, the planet destination,
-                                        their
-                                        age, whether or not they paid for VIP, various fees for the ship's
-                                        ammenties, and whether or not they had been transported to another
-                                        dimension.</p>
+                                    <p>In the world of Pokemon games, there are various NPC trainers you can encounter.
+                                        For our project, we built a classifier that attempted to determine a trainer
+                                        class for a given pokemon team. In order to do this, I looked at various
+                                        statistics of pokemon, such as their weight, height, attack, and other stats all
+                                        found from the Kaggle file. We also needed a main file that contained the
+                                        trainer class and their pokemon teams. This file was created manually by the
+                                        whole team and because there were so many instances, we limited our game
+                                        generations to look at to generations 1 through 4. I first preprocessed the data
+                                        with simple text cleaning and removed
+                                        classes that had not nearly enough instances to use in our model. I then had to
+                                        determine how to represent the qualitative data as quantitative. Determining a
+                                        model was difficult because of the varying team sizes, but the steps we took are
+                                        elaborated further in the next section.</p>
                                 </article>
                                 <article>
-                                    <h3>Methods for Comparison</h3>
-                                    <p>Logistic Regression and Random Forest using R and its libraries.</p>
+                                    <h3>Methodology</h3>
+                                    <p>Because we were working with textual data, I first needed to make sure all the
+                                        <strong>text was cleaned</strong> and had the same formatting. In this case, everything was
+                                        lowercased and possible spaces were removed. Spelling errors were common in our
+                                        manually-created file so I created a function that would help me determine which
+                                        rows had a spelling error. We then <strong>removed classes</strong> that had less than 10
+                                        instances, which brought us from nearly 100 different classes to 52. We chose 10
+                                        as it was the median for the number of instances of each trainer class.</p>
+                                    <p>The next part was to vectorize the data. By <strong>vectorizing the data</strong>, we could
+                                        convert our categorical data into numerical data. While it is pretty common for
+                                        trainer classes to have specific themes, such as the Sailor class having only
+                                        Water type pokemon, we also needed some other metric for classes that had
+                                        varying distributions so that's why we used the Pokemon stats as well. I created
+                                        a vectorizer function that would take an
+                                        element type of a Pokemon and create a one-hot encoded elemental vector
+                                        essentially. For the statistics, I created a vector that would contain the
+                                        standard deviation of the pokemon statistics rather than the means because the
+                                        standard deviation would represent the overall spread of the team. The
+                                        <strong>statistics were normalized</strong> before this using mostly Power Transformer, but also
+                                        Robust Scaler. </p>
+                                </article>
+                                <article>
+                                    <h3>The Model</h3>
+                                    <p>I wanted to implement a Recurrent Neural Network(RNN) for our project because it
+                                        handles the varying lengths of pokemon teams well. The issue with the varying
+                                        team lengths (the number of pokemon per team can range from 1 to 6) is that if
+                                        we consider teams of just 1 pokemon and add padding to match the length of teams
+                                        of 6, we lose valuable information. Using a neural network would help solve that
+                                        problem. But unfortunately, my computer could not handle the model, so instead
+                                        we did a <strong>LSTM machine learning model</strong> that would take a padded elemental vector
+                                        and the statistics vector.
+                                    </p>
+                                    <p>
+                                        First, the training and testing data were split into respective sets and were
+                                        stratified according to the target variable (i.e., the trainer class) to ensure
+                                        equal class distribution in both sets. Next, the input variables (team vectors
+                                        and team statistics) and target variable (trainer class) were extracted from the
+                                        training and testing data, respectively, and preprocessed for use in the model.
+                                        The team vectors were padded using the `pad_sequences` function from TensorFlow.
+                                        The reason why we did want to use MLP-RNN was to avoid having to pad the Team
+                                        Vectors, but it was just unavoidable for us. The team statistics were flattened.
+                                        The target variable was one-hot encoded using the `to_categorical` function from
+                                        TensorFlow so we could convert it from strings to ints for the model. The model
+                                        architecture is defined using Keras functional API. The model has two inputs,
+                                        one for the team vectors and another for the team statistics, and one output for
+                                        the trainer class. The team vectors input is passed through an LSTM layer with
+                                        64 units. The resulting output is concatenated with the team statistics input.
+                                        The concatenated output is then passed through three dense layers with ReLU
+                                        activation functions and decreasing numbers of units (128, 64, and 32). The
+                                        output was passed through a dense layer with 52 units and a softmax activation
+                                        function to obtain the class probabilities. The model was compiled with Adam
+                                        optimizer, categorical cross-entropy loss function, and accuracy metric. The
+                                        model is trained on the training data using the `fit` method, with a batch size
+                                        of 32, 10 epochs, and validation data consisting of the testing data. The
+                                        training and validation metrics (loss and accuracy) were printed for each epoch
+                                        too, which are featured in the Visualization section of the report (exit out of
+                                        this pop-up to click on the report listed in the section if you're interested in
+                                        more details!).
+
+                                    </p>
                                 </article>
                                 <article>
                                     <h3>Conclusions</h3>
-                                    <p>Logistic regression performed with a 75.03% accuracy. I used the raw
-                                        training
-                                        data,
-                                        as well as the cleaned data that I made, for Random Forest. My cleaned
-                                        data
-                                        had a
-                                        75.39% accuracy while the raw data had a 79.88% accuracy.
+                                    <p>The accuracy of the model was quite poor: <strong>46.54%</strong>. However, there were various
+                                        factors that could have contributed to such a low accuracy. We knew that padding
+                                        the data would be an issue as there were many teams that had less than 6 pokemon
+                                        in their team. Additionally, there may not have been enough data for some
+                                        samples. Something else we could have tried to do is only keep classes with 20
+                                        instances or higher. We also had classes that had much more samples than any
+                                        other class. While we did attempt to stratify the trainer class target variable,
+                                        it is possible that overfitting was indeed an issue.
                                     </p>
+                                    <p>However, I'm still incredibly proud as this was a project I had not seen anywhere
+                                        online. I first got into Computer Science because of how much I loved the
+                                        Pokemon games and I was glad that my last school project combined my love for
+                                        machine learning and Pokemon.</p>
                                 </article>
                             </div>
                         </div>
@@ -159,7 +221,7 @@
                         <div class="modal-content">
                             <div class="container">
                                 <!--Your modal content goes here-->
-                                
+
                                 <article>
                                     <h2>Optical Music Recognition</h2>
                                     <h3>Project Description</h3>
@@ -317,7 +379,7 @@
                         <div class="modal-content">
                             <div class="container">
                                 <!--Your modal content goes here-->
-                                
+
                                 <article>
                                     <h2>Snake Game</h2>
                                     <h3>Project Description</h3>
@@ -430,7 +492,7 @@
                         rel="noopener noreferrer"><i class="fa-brands fa-linkedin fa-xl fa-inverse"></i></a>
                 </div>
                 <div class="con">
-                    <p>email: ankarim01@gmail.com</p> 
+                    <p>email: ankarim01@gmail.com</p>
                     <p>phone: (219) 232-5001</p>
                 </div>
             </div>
@@ -467,7 +529,7 @@
     <script>
 
 
-        $("#titanId").animatedModal();
+        $("#pokeId").animatedModal();
         $("#omrId").animatedModal();
         $("#snekId").animatedModal();
     </script>
